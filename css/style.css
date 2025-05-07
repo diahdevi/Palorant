@@ -1,0 +1,360 @@
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../font/irish-grover/IrishGrover-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Optional: untuk optimasi loading */
+}
+
+@font-face {
+    font-family: 'Itim';
+    src: url('../font/Itim-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Optional: untuk optimasi loading */
+}
+
+/* Body */
+
+
+.body {
+    position: relative;
+    /* background-color: yellowgreen;   */
+    height: 100vh;
+}
+
+.body img {
+    position: absolute;
+}
+
+.body .bg-home {
+    height: 100vh;
+    left: 0;
+    width: 100%;
+}
+
+.body .agent {
+    bottom: 0;
+}
+
+.body h1 {
+    position: absolute;
+    padding: 2rem;
+    left: 50%;
+    top: 1%;
+    transform: translateX(-35%);
+    background: linear-gradient(to bottom, #A50101 0%, #A50101 50%, #ffffff 76%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    font-size: 110px;
+    font-family: 'Irish Grover', cursive;
+}
+
+.text-description {
+    position: absolute;
+    padding: 40px;
+    margin: 18% 10% 10px 50%;
+    background: rgba(16, 22, 34, 0.95);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: floatIn 0.8s ease-out forwards;
+}
+
+.text-description a {
+    text-decoration: none;
+}
+
+@keyframes floatIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.body h2 {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 26px;
+    font-weight: 400;
+    font-family: 'Itim', cursive;
+    text-align: justify;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    background: linear-gradient(45deg, #fff 30%, #1afffb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.body h5 {
+    margin-top: 30px;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #ff4655 0%, #ad1010 100%);
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Irish Grover', cursive;
+    text-align: center;
+    line-height: 1.2;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.body h5:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(255, 70, 85, 0.3);
+    background: linear-gradient(135deg, #ff5565 0%, #c22020 100%);
+}
+
+.body h5::after {
+    content: "➔";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+
+.body h5:hover::after {
+    opacity: 1;
+    right: 40px;
+}
+
+.text-best-agent {
+    position: absolute;
+    margin: 45% 0 0 5%;
+    color: #FFDADA; /* merah pucat yang kalem untuk teks biasa */
+    font-size: 32px;
+    font-weight: 300;
+    font-family: 'Itim', cursive;
+    text-align: left;
+    line-height: 1.5;
+    animation: fadeInUp 1s ease-in-out;
+    transition: transform 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.text-best-agent a {
+    text-decoration: none;
+}
+
+.text-best-agent:hover {
+    transform: scale(1.03);
+}
+
+.text-best-agent h3 {
+    color: #f4d3d3; 
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255, 71, 71, 0.6);
+}
+
+.text-best-agent h4 {
+    background: linear-gradient(to right, #d30337, #ff8049, #ffef92); /* merah ke orange ke gold */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    font-size: 60px;
+    font-family: 'Irish Grover', cursive;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 4px rgba(255, 0, 64, 0.6), 0 0 20px rgba(120, 10, 18, 0.785);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.text-best-agent h4:hover {
+    transform: scale(1.08) rotate(-2deg);
+    filter: brightness(1.2);
+}
+
+/* Animasi Fade In */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Burger menu style */
+.burger {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* Mobile devices (up to 767px) */
+@media screen and (max-width: 767px) {
+
+    /* Body */
+
+    .body {
+        height: 500px;  
+    }
+
+    .body .bg-home {
+        height: 500px;
+        left: 0;
+        width: 100%;
+    }
+
+    .body .agent {
+        width: 50%;
+    }
+
+    .body h1 {
+        position: absolute;
+        padding: 2rem;
+        left: 50%;
+        top: 1%;
+        transform: translateX(-50%);
+        background: linear-gradient(to bottom, #A50101 0%, #A50101 50%, #ffffff 76%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 600;
+        font-size: 400%;
+        font-family: 'Irish Grover', cursive;
+    }
+
+    .text-description {
+        position: absolute;
+        padding: 25px;
+        margin: 40% 5% 0 45%;
+        background: rgba(16, 22, 34, 0.95);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        transform: translateY(20px);
+        opacity: 0;
+        animation: floatIn 0.8s ease-out forwards;
+    }
+
+    .body h2 {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 90%;
+        font-weight: 400;
+        font-family: 'Itim', cursive;
+        text-align: justify;
+        line-height: 1.6;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        background: linear-gradient(45deg, #fff 30%, #1afffb 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .body h5 {
+        margin-top: 20px;
+        padding: 18px 40px;
+        background: linear-gradient(135deg, #ff4655 0%, #ad1010 100%);
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        font-family: 'Irish Grover', cursive;
+        text-align: center;
+        line-height: 1.2;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .text-best-agent {
+        position: absolute;
+        margin: 40% 0 0 5%;
+        font-family: 'Itim', cursive;
+        text-align: left;
+        line-height: 1.5;
+        animation: fadeInUp 1s ease-in-out;
+        transition: transform 0.3s ease;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    .text-best-agent h3 {
+        color: #f4d3d3; /* merah terang */
+        font-size: 28px;
+        font-weight: 400;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 8px rgba(255, 71, 71, 0.6);
+    }
+    
+    .text-best-agent h4 {
+        background: linear-gradient(to right, #d30337, #ff8049, #ffef92); /* merah ke orange ke gold */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 800;
+        font-size: 45px;
+        font-family: 'Irish Grover', cursive;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 0 0 4px rgba(255, 0, 64, 0.6), 0 0 20px rgba(120, 10, 18, 0.785);
+        transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .body h5::after {
+        content: "➔";
+        position: absolute;
+        right: 10px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        align-items: center;
+    }
+    
+    .body h5:hover::after {
+        opacity: 1;
+        right: 20px;
+    }
+
+    
+}
+
+
+@media (max-width: 1100px) and (min-width: 768px) {
+    .text-description {
+        margin: 53% 5% 4% 57%;
+    }
+
+    .body h5::after {
+        content: "➔";
+        position: absolute;
+        right: 10px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        align-items: center;
+    }
+    
+    .body h5:hover::after {
+        opacity: 1;
+        right: 20px;
+    }
+
+}

@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../font/irish-grover/IrishGrover-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Itim';
+    src: url('../font/Itim-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ========== GLOBAL ========== */
+
+.body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    background-image: url('../assets/bg maps2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.bg-maps {
+    display: none;
+}
+
+/* Back Button */
+.icon-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    z-index: 10;
+}
+
+.icon-back:hover {
+    transform: scale(1.15) rotate(-10deg);
+    background: linear-gradient(45deg, #fe0755, #ff0022);
+    box-shadow: 0 4px 15px rgba(243, 18, 82, 0.566);
+    border-radius: 50%;
+    padding: 8px;
+    filter: drop-shadow(0 4px 8px rgba(248, 132, 177, 0.692));
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* CONTENT WRAPPER */
+.content {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* JUDUL */
+.container-title {
+    text-align: center;
+    font-family: 'Irish Grover', cursive;
+    color: #FFB3B3;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.container-title h1 {
+    font-weight: 200;
+    margin: 0;
+}
+
+/* GAMBAR PETA */
+.container-maps {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-maps img {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+}
+
+/* TEKS */
+.container-text {
+    font-family: 'Irish Grover', cursive;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-top: 10px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .container-title {
+        font-size: 34px;
+        margin-bottom: 35px;
+    }
+
+    .icon-back {
+        width: 36px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .container-maps img {
+        width: 85%;
+    }
+
+    .container-text {
+        font-size: 15px;
+        padding: 0 5%;
+    }
+
+    .body {
+        background-image: url('../assets/bg-maps-tablet.png');
+    }
+}
+
+/* HP */
+@media (max-width: 768px) {
+    .container-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .icon-back {
+        width: 32px;
+        top: 12px;
+        left: 12px;
+    }
+
+    .container-maps img {
+        width: 90%;
+    }
+
+    .container-text {
+        font-size: 14px;
+        padding: 0 5%;
+    }
+
+    .body {
+        background-image: url('../assets/bg-maps-hp.png');
+    }
+}
+
+

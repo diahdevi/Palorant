@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../font/irish-grover/IrishGrover-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Itim';
+    src: url('../font/Itim-Regular.otf') format('truetype');
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.bg-agent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.body-image,
+.ability,
+.body-text {
+    width: 33.33%;
+    padding: 20px;
+}
+
+.body-image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.icon-back {
+    width: 50px;
+    margin: 30px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-back:hover {
+    transform: scale(1.15) rotate(-10deg);
+    background: linear-gradient(45deg, #fe0755, #ff0022);
+    box-shadow: 0 4px 15px rgba(243, 18, 82, 0.566);
+    border-radius: 50%;
+    padding: 8px;
+    filter: drop-shadow(0 4px 8px rgba(248, 132, 177, 0.692));
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.agent-image {
+    width: 120%;
+    margin-top: -60px;
+    margin-left: 30px;
+}
+
+.ability {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+
+.ability-icon {
+    width: 60px;
+    margin: 20px 0;
+    cursor: help;
+}
+
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+
+.tooltip-wrapper:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 120%;
+    background-color: #fd9b9b;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: normal;
+    width: 150px;
+    word-wrap: break-word;
+    font-family: 'Itim', cursive;
+    z-index: 10;
+}
+
+.tooltip-wrapper:hover::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(17, 255, 251, 0.8) transparent transparent transparent;
+}
+
+.body-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.body-text h1 {
+    font-family: 'Irish Grover', cursive;
+    color: #FFB3B3;
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.body-text p {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .body-image,
+    .ability,
+    .body-text {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .icon-back {
+        width: 50px;
+        margin-left: 10px;
+    }
+
+    .agent-image {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .ability {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .ability-icon {
+        width: 50px;
+        margin: 10px;
+    }
+
+    .body-text h1 {
+        font-size: 50px;
+    }
+
+    .body-text p {
+        font-size: 16px;
+    }
+
+    .tooltip-wrapper:hover::before {
+        left: 50%;
+        top: -60px;
+        transform: translateX(-50%);
+    }
+
+    .tooltip-wrapper:hover::after {
+        top: -10px;
+        left: 50%;
+        border-color: transparent transparent rgba(17, 255, 251, 0.8) transparent;
+    }
+}
+
+/* HP */
+@media (max-width: 600px) {
+    .icon-back {
+        width: 40px;
+    }
+
+    .agent-image {
+        width: 90%;
+    }
+
+    .ability-icon {
+        width: 40px;
+    }
+
+    .body-text h1 {
+        font-size: 40px;
+    }
+
+    .body-text p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .tooltip-wrapper:hover::before {
+        left: 50%;
+        top: -70px;
+        transform: translateX(-50%);
+    }
+
+    .tooltip-wrapper:hover::after {
+        top: -10px;
+        left: 50%;
+        border-color: transparent transparent rgba(17, 255, 251, 0.8) transparent;
+    }
+}
+
+@media (min-width: 1100px) {
+    .ability-icon {
+        width: 60px;
+        margin: 15px 0;
+    }
+
+    .ability {
+        margin-top: 80px;
+        margin-left: 50px;
+        margin-right: 30px;
+    }
+
+    .body-text h1 {
+        margin-bottom: 60px;
+    }
+}

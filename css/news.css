@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../font/irish-grover/IrishGrover-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Itim';
+    src: url('../font/Itim-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.body {
+    background-color: #FFE9E9;
+    padding: 20px 5%;
+    box-sizing: border-box;
+}
+
+.body a {
+    text-decoration: none;
+}
+
+.container-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container-title h1 {
+    background: linear-gradient(to bottom, #A50101 0%, #A50101 50%, #ffffff 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    font-size: 58px;
+    font-family: 'Irish Grover', cursive;
+}
+
+/* News Item */
+.container-news {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-news:hover img {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.container-news img {
+    width: 330px; /* diperbesar sedikit di desktop */
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.container-text {
+    margin-left: 60px;
+}
+
+.container-news h1 {
+    font-family: 'Itim', cursive;
+    font-size: 30px;
+    color: #da3535;
+    margin-bottom: 20px;
+}
+
+.container-news h2 {
+    font-family: 'Itim', cursive;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.container-news h3 {
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 20px;
+    padding: 5px 0;
+}
+
+.container-news p {
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 20px;
+    padding: 8px 0;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+    .container-news {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container-news img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .container-text {
+        margin: 0;
+    }
+
+    .container-news h1,
+    .container-news h2,
+    .container-news h3,
+    .container-news p {
+        padding: 4px 0;
+    }
+}
+
+/* Responsive - HP */
+@media (max-width: 768px) {
+    .container-title h1 {
+        font-size: 44px;
+    }
+
+    .container-news img {
+        width: 90%;
+    }
+
+    .container-text h1 {
+        font-size: 24px;
+    }
+
+    .container-text h2 {
+        font-size: 22px;
+    }
+
+    .container-text h3 {
+        font-size: 18px;
+    }
+
+    .container-text p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1100px){
+   .container-news{
+        padding: 15px 30px;
+   }
+}

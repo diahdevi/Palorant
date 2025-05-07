@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../font/irish-grover/IrishGrover-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Itim';
+    src: url('../font/Itim-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.body {
+    background-color: #FFE9E9;
+    padding: 0 5%;
+    padding-bottom: 20px;
+}
+
+.title-span {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.title-span h2 {
+    color: red;
+    font-family: 'Itim', cursive;
+    font-size: 1.2rem;
+}
+
+.title-span span {
+    color: #635B5B;
+    font-family: 'Itim', cursive;
+    font-size: 1rem;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+.body h1 {
+    margin-bottom: 30px;
+    font-family: 'Itim', cursive;
+    font-size: 3.2rem;
+    font-weight: 100;
+    line-height: 1.2;
+}
+
+.container-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-image {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.container-image img:hover {
+    transform: scale(1.02);
+}
+
+.container-body p {
+    margin: 40px 0;
+    padding: 0 10px;
+    font-family: 'Itim', cursive;
+    text-align: justify;
+    font-size: 1.1rem;
+    max-width: 900px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .body h1 {
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    .title-span {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container-body p {
+        margin: 30px 0;
+        font-size: 1rem;
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    .body {
+        padding: 0 3%;
+    }
+
+    .body h1 {
+        font-size: 1.8rem;
+    }
+
+    .title-span h2, 
+    .title-span span {
+        font-size: 0.9rem;
+    }
+
+    .container-body p {
+        font-size: 0.95rem;
+    }
+
+    .container-image {
+        padding-top: 20px;
+    }
+}

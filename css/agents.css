@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../font/irish-grover/IrishGrover-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Itim';
+    src: url('../font/Itim-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.body {
+    position: relative;
+    padding: 0 20px;
+    padding-bottom: 50px;
+}
+
+.body .bg-agent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .body {
+        background-image: url('../assets/bg agents.png');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 30px;
+    }
+
+    .body .bg-agent {
+        display: none;
+    }
+}
+
+.container-title {
+    position: relative;
+    text-align: center;
+}
+
+.container-title h1 {
+    margin-top: 30px;
+    display: inline-block;
+    background: linear-gradient(to bottom, #A50101 0%, #A50101 50%, #ffffff 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    font-size: 4vw;
+    font-family: 'Irish Grover', cursive;
+    max-width: 90%;
+}
+
+/* CARD LAYOUT */
+.container-card {
+    margin-top: 60px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom default */
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Responsive grid untuk device */
+@media (max-width: 768px) {
+
+    .container-card {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
+    }
+
+    .container-title h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-card {
+        grid-template-columns: 1fr;
+    }
+    .container-title h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+}
+
+.card {
+    background-color: #FFD3D4;
+    width: 100%;
+    max-width: 220px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #FFB3B3;
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    perspective: 1000px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.image-front, .image-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+.image-back {
+    transform: rotateY(180deg);
+}
+
+.card:hover .image-front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .image-back {
+    transform: rotateY(0deg);
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.card h2, .card p {
+    text-align: center;
+    font-family: 'Itim', cursive;
+}
+
+.card h2 {
+    padding-top: 8px;
+    font-size: 20px;
+}
+
+.card p {
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+/* Default style untuk burger menu */
+.burger-menu {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}

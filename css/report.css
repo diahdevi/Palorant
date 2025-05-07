@@ -1,0 +1,311 @@
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../font/irish-grover/IrishGrover-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Itim';
+    src: url('../font/Itim-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.body {
+    position: relative;
+    /* min-height: 100vh; */
+    /* padding-bottom: 30px; */
+    background: url("../assets/bg report.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+.body .bg-report {
+    display: none; /* Ganti background jadi CSS, bukan <img> */
+}
+
+.container-title {
+    position: relative;
+    height: 100px;
+    z-index: 2;
+}
+
+.container-title h1 {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #A50101 0%, #A50101 50%, #ffffff 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    font-size: 58px;
+    font-family: 'Irish Grover', cursive;
+}
+
+.container-report {
+    background-color: #600707;
+    position: relative;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1100px;
+    padding: 30px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.report-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.report-text p {
+    font-family: 'Itim', cursive;
+    font-size: 15px;
+    color: #ffffff;
+    width: 150px;
+    margin: 0;
+}
+
+.report-text h2 {
+    color: #ffffff;
+    margin: 0 10px;
+}
+
+.report-text .input-field {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Itim', cursive;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+}
+
+.report-text-area textarea {
+    height: 150px;
+    resize: none;
+}
+
+.container-submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.permission {
+    color: #ffffff;
+    font-family: 'Itim', cursive;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.submit-button {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.btn-submit {
+    font-family: 'Itim', cursive;
+    width: 120px;
+    height: 40px;
+    background-color: #f4d3d3;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    animation: slideUp 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #e10d4d;
+    font-family: 'Itim', cursive;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    color: #333;
+    font-family: 'Itim', cursive;
+    margin-top: 2px;
+}
+
+.modal-content button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background-color: #e10d4d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Itim', cursive;
+    font-size: 18px;
+}
+
+.modal-content button:hover {
+    background-color: #b01131;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .body {
+        background-attachment: fixed;
+        background-size: cover;
+        /* padding-bottom: 50px; */
+    }
+
+    .container-report {
+        width: 85%;
+    }
+
+    .report-text {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .report-text p {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .report-text h2 {
+        display: inline-block; /* tampilkan lagi tanda ":" */
+        color: #fff;
+        margin-right: 5px;
+    }
+
+    .report-text .input-field {
+        width: 97%;
+    }
+
+    .container-submit {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .submit-button {
+        width: 100%;
+        text-align: left;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+}
+
+.label-container {
+    display: flex;
+    align-items: center;
+    min-width: 100px; /* bisa disesuaikan */
+    flex-shrink: 0;
+}
+
+.label-container p {
+    margin: 0;
+    color: white;
+}
+
+.label-container .colon {
+    margin-left: 5px;
+    color: white;
+}
+
+.input-field {
+    flex-grow: 1;
+}
+
+.input-field input,
+.input-field textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.colon {
+    color: white;
+    font-family: 'Itim', cursive;
+    font-size: 1rem;
+}
+
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .body {
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .container-title h1 {
+        font-size: 40px;
+    }
+
+    
+    .container-report {
+        width: 75%;
+        margin-top: 0;
+    }
+}
+
+

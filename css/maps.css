@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Irish Grover';
+    src: url('../font/irish-grover/IrishGrover-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Itim';
+    src: url('../font/Itim-Regular.otf') format('truetype');
+    font-display: swap;
+}
+
+.body {
+    position: relative;
+}
+.body .bg-maps {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.container-title {
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+.container-title h1 {
+    background: linear-gradient(to bottom, #A50101 0%, #fd1010 50%, #ffffff 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    font-size: 58px;
+    font-family: 'Irish Grover', cursive;
+    text-align: center;
+}
+
+/* === Responsive Grid === */
+.container-maps {
+    display: grid;
+    grid-template-columns: 1fr; /* Default: HP dan tablet */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Desktop (≥1200px): 3 columns */
+@media (min-width: 1200px) {
+    .container-maps {
+        padding: 20px 70px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px;
+    }
+}
+
+/* === Card Style === */
+.card {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
+}
+.card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; /* Supaya proporsional dan ter-crop rapi */
+    border-radius: 20px 20px 0 0;
+    transition: transform 0.3s ease-in-out;
+    display: block;
+}
+.card img:hover {
+    transform: scale(1.05);
+}
+.card a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    display: block;
+    padding: 10px;
+}
+.card h2 {
+    margin-top: 10px;
+    font-family: 'Irish Grover', cursive;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Responsive Title */
+@media (max-width: 768px) {
+    .container-title h1 {
+        font-size: 48px;
+    }
+
+    .container-title h1 {
+        font-size: 40px;
+        background: linear-gradient(to bottom, #A50101 0%, #fd1010 42%, #ffffff 85%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+@media (max-width: 1199px) {
+    .bg-maps {
+        display: none;
+    }
+
+    .body {
+        background-image: url('../assets/bg-maps-hp.png'); /* ganti path sesuai */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed; /* Ini bikin fixed saat scroll */
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+   .card {
+    width: 70%;
+   }
+
+   .container-maps {
+        justify-items: center;
+   }
+   .body {
+    background-image: url('../assets/bg-maps-tablet.png'); /* ganti path sesuai */
+    }
+}
+
