@@ -1,0 +1,1 @@
+Palorant is a multiplayer tactical first-person shooter game created by Giot company. This website project is developed to help players understand the game's mechanics, agents, maps, and latest news, as well as provide a platform to report bugs. The website is designed to be attractive, responsive, fully functional, and usable across devices, especially mobile phones.
